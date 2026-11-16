@@ -1,5 +1,3 @@
-descuento = 0
-
 print("Ingrese el monto total")
 monto = float(input())
 print("Es estudiante de la UTPL? (V o F)")
