@@ -1,0 +1,17 @@
+print("¿Es estudiante de la UTPL? (V o F)")
+es_estudiante = input().strip().upper() in ("V", "VERDADERO")
+
+if es_estudiante:
+    print("¿Tiene el carné vigente? (V o F)")
+    tiene_carne = input().strip().upper() in ("V", "VERDADERO")
+    if tiene_carne:
+        print("Acceso permitido")
+    else:
+        print("Acceso denegado: carné no vigente")
+else:
+    print("¿Tiene autorización especial del docente? (V o F)")
+    tiene_autorizacion = input().strip().upper() in ("V", "VERDADERO")
+    if tiene_autorizacion:
+        print("Ingreso temporal")
+    else:
+        print("Acceso denegado")
