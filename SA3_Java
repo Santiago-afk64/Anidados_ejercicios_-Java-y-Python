@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class AccesoLaboratorio {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean esEstudiante, tieneCarne, tieneAutorizacion;
+        String respuesta;
+
+        System.out.println("¿Es estudiante de la UTPL? (V o F)");
+        respuesta = sc.next().trim().toUpperCase();
+        esEstudiante = respuesta.equals("V") || respuesta.equals("VERDADERO");
+
+        if (esEstudiante) {
+            System.out.println("¿Tiene el carné vigente? (V o F)");
+            respuesta = sc.next().trim().toUpperCase();
+            tieneCarne = respuesta.equals("V") || respuesta.equals("VERDADERO");
+            if (tieneCarne) {
+                System.out.println("Acceso permitido");
+            } else {
+                System.out.println("Acceso denegado: carné no vigente");
+            }
+        } else {
+            System.out.println("¿Tiene autorización especial del docente? (V o F)");
+            respuesta = sc.next().trim().toUpperCase();
+            tieneAutorizacion = respuesta.equals("V") || respuesta.equals("VERDADERO");
+            if (tieneAutorizacion) {
+                System.out.println("Ingreso temporal");
+            } else {
+                System.out.println("Acceso denegado");
+            }
+        }
+        sc.close();
+    }
+}
