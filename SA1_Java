@@ -10,10 +10,10 @@ public class Descuento {
         monto = sc.nextDouble();
         System.out.println("Es estudiante de la UTPL? (V o F)");
         String respuesta = sc.next().trim().toUpperCase();
-        estudianteUtpl = respuesta.equals("V") || respuesta.equals("VERDADERO");
+        Estudiante = respuesta.equals("V") || respuesta.equals("VERDADERO");
 
         descuento = 0;
-        if (estudianteUtpl) {
+        if (Estudiante) {
             descuento = 0.20;
             if (monto > 30) {
                 descuento = descuento + 0.05;
