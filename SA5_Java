@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class TarifaParqueadero {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double horas, tarifa;
+        boolean estudiante;
+
+        System.out.println("¿Es estudiante de la UTPL? (V o F)");
+        String respuesta = sc.next().trim().toUpperCase();
+        estudiante = respuesta.equals("V") || respuesta.equals("VERDADERO");
+        System.out.println("Ingrese las horas de permanencia");
+        horas = sc.nextDouble();
+
+        tarifa = horas * 1.00;
+        if (estudiante) {
+            tarifa = tarifa * 0.50;
+            if (horas > 4) {
+                tarifa = tarifa * 1.20;
+            }
+        } else {
+            if (horas > 6) {
+                tarifa = tarifa * 1.20;
+            }
+        }
+
+        System.out.println("Monto a pagar: $" + tarifa);
+        sc.close();
+    }
+}
