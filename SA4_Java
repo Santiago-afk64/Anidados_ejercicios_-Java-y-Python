@@ -3,18 +3,15 @@ import java.util.Scanner;
 public class BonoEmpresas {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double antiguedad, sueldo, bono, sueldoTotal;
-        boolean excelente;
-
         System.out.println("Ingrese los años de antigüedad");
-        antiguedad = sc.nextDouble();
+        double antiguedad = sc.nextDouble();
         System.out.println("Ingrese el sueldo");
-        sueldo = sc.nextDouble();
+        double sueldo = sc.nextDouble();
         System.out.println("¿La evaluación es excelente? (V o F)");
         String respuesta = sc.next().trim().toUpperCase();
-        excelente = respuesta.equals("V") || respuesta.equals("VERDADERO");
+        boolean excelente = respuesta.equals("V") || respuesta.equals("VERDADERO");
 
-        bono = 0;
+        double bono = 0;
         if (antiguedad > 2) {
             bono = sueldo * 0.10;
             if (excelente) {
@@ -26,7 +23,7 @@ public class BonoEmpresas {
             }
         }
 
-        sueldoTotal = sueldo + bono;
+        double sueldoTotal = sueldo + bono;
         System.out.println("Bono: $" + bono);
         System.out.println("Sueldo total: $" + sueldoTotal);
         sc.close();
