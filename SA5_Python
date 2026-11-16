@@ -1,7 +1,5 @@
-print("¿Es estudiante de la UTPL? (V o F)")
-estudiante = input().strip().upper() in ("V", "VERDADERO")
-print("Ingrese las horas de permanencia")
-horas = float(input())
+estudiante = input("¿Es estudiante de la UTPL? (V o F) ").strip().upper() in ("V", "VERDADERO")
+horas = float(input("Ingrese las horas de permanencia: "))
 
 tarifa = horas * 1.00
 if estudiante:
